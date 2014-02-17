@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+    <title>Kauppa</title>
+</head>
+<body>
+    <% if (lkm) { %>
+        <a href="/kori">Korissa <%= lkm %> ostosta.</a>
+    <% } %>
+    <h2>Myytävät tuotteet:</h2>
+    <table>
+    <% for (var id in tuotteet) {%>
+        <% var tuote = tuotteet[id]; %>
+        <tr><td><%= tuote['nimi'] %></td>
+            <td><%= tuote['hinta'] / 100.0 %>€</td>
+        <td>
+        <form method="post" action="tuotekoriin/<%= id %>">
+            <input type="submit" value="Lisää koriin" />
+        </form>
+        </td></tr>
+    <% } %>
+    </table>
+</body>

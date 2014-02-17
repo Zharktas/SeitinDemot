@@ -1,0 +1,13 @@
+<!doctype html>
+<head>
+    <title>Kori</title>
+</head>
+<body>
+    <h2>Ostoskorin sisältö:</h2>
+    <ul>
+    <% for (var id in korissa) {%>
+        <% var tuote = korissa[id].tuote, lkm = korissa[id]['lkm']; %>
+        <li><%= tuote.nimi %>: <%= lkm %> kpl</li>
+    <% } %>
+    </ul>
+</body>
