@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+    <h2>Kirjaudu</h2>
+
+    <form action="/locallogin" method="post">
+        <div>
+            <label>Käyttäjä:</label>
+            <input type="text" name="kayttaja"/>
+        </div><div>
+            <label>Salasana:</label>
+            <input type="password" name="salasana"/>
+        </div><div>
+            <input type="submit" value="Kirjaudu"/>
+        </div>
+    </form>
+    <div>
+        <a href="/twitterlogin">Kirjaudu Twitter-tilillä</a>
+    </div>
+</body>

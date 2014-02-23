@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+    <title>Etusivu</title>
+</head>
+<body>
+    <h2><%= otsikko %></h2>
+    <p>
+      <a href="/Etusivu">Etusivu</a>
+      <a href="/Toinen">Toinen</a>
+      <a href="/Kolmas">Kolmas</a>
+    </p>
+
+    <% if (kayttaja) { %>
+
+        <h3>Moi <%= kayttaja %>!</h3>
+        <form action="/logout" method="post">
+            <input type="submit" value="Kirjaudu ulos"/>
+        </form>
+
+        <p><%= teksti %></p>
+
+    <% } else { %>
+
+      <h3>Kirjaudu</h3>
+      <form action="/kirjaudu" method="post">
+          <div>
+              <label>Käyttäjä:</label>
+              <input type="text" name="kayttaja"/>
+          </div><div>
+              <label>Salasana:</label>
+              <input type="password" name="salasana"/>
+          </div><div>
+              <input type="submit" value="Kirjaudu"/>
+          </div>
+      </form>
+      <div>
+          <a href="/twitterlogin">Kirjaudu Twitter-tilillä</a>
+      </div>
+
+    <% } %>
+
+</form>
+
+</body>

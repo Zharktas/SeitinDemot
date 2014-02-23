@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+    <title>Varatwitter</title>
+</head>
+<body>
+  <h2>Varatwitter</h2>
+  <% if (kayttaja) { %>
+    <p>Olet <%= kayttaja.name %>.</p>
+    <form action="/twiittaa" method="post">
+      <input type="text" name="twiitti" />
+      <input type="submit" value="Twiittaa" />
+    </form>
+
+  <% } else { %>
+  <p>
+    <a href="/twitterlogin">Kirjaudu twitter-tililläsi</a>
+  </p>
+  <% } %>
+
+  <% if (twiitti) { %>
+  <p>
+    Twiittasit että <%= twiitti %>.
+    <a href="<%= linkki %>">Kato vaikka.</a>
+  </p>
+  <% } %>
+
+</body>
