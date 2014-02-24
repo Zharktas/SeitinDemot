@@ -15,7 +15,8 @@
     "connect-ensure-login": "~0.1.1",
     "ejs": "~0.8.5",
     "passport-http": "~0.2.2",
-    "twitter": "~0.2.7"
+    "twitter": "~0.2.7",
+    "passport-github": "~0.1.5"
   },
   "devDependencies": {}
 }

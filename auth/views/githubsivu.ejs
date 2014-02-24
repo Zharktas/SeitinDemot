@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+    <title>GitHub-testi</title>
+</head>
+<body>
+  <h2>GitHub-testi</h2>
+  <% if (kayttaja) { %>
+  <p>Moi, <%= kayttaja.name %></p>
+    <form action="/uusiissue" method="post">
+      <label for="repo">Repo:</label>
+      <input type="text" name="repo" value="ahn/SeitinDemot" />
+      <label for="repo">Issuen otsikko:</label>
+      <input type="text" name="title" />
+      <input type="submit" value="Luo uusi issue" />
+    </form>
+  <% } else { %>
+  <p>
+    <a href="/githublogin">Kirjaudu GitHub-tililläsi</a>
+  </p>
+  <% } %>
+
+
+</body>
