@@ -14,5 +14,5 @@ app.use('/', tarkistus);
 
 app.get('/', suojattu);
 
-app.listen(3000);
+app.listen(process.env.PORT, process.env.IP);
 

@@ -87,5 +87,5 @@ app.post('/login', passport.authenticate('local',
          {successRedirect: '/kello', failureRedirect: '/login'}));
 app.get('/login', function(req,res) {res.render('kirjaudu');} );
 
-app.listen(3000);
+app.listen(process.env.PORT, process.env.IP);
 

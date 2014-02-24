@@ -23,7 +23,7 @@ var TWITTER_SECRET = 'H2mAscOWB4QJTziHDNg9cw96m6lWXy614pH0r9pssyA';
 passport.use(new TwitterStrategy({
   consumerKey: TWITTER_KEY,
   consumerSecret: TWITTER_SECRET,
-  callbackURL: "http://localhost:3000/twittercallback"
+  callbackURL: "https://luentodemot-c9-zharktas.c9.io/twittercallback"
 },
 function(token, tokenSecret, profile, done) {
   var user = {
@@ -71,5 +71,5 @@ app.get('/', etusivu);
 
 app.post('/twiittaa', twiittaa);
 
-app.listen(3000);
+app.listen(process.env.PORT, process.env.IP);
 
