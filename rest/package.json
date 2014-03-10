@@ -1,0 +1,21 @@
+{
+  "name": "rest",
+  "version": "0.0.0",
+  "description": "",
+  "main": "rest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "passport-local": "~0.1.6",
+    "passport": "~0.2.0",
+    "express": "~3.4.8",
+    "ejs": "~0.8.5",
+    "passport-http": "~0.2.2",
+    "connect-ensure-login": "~0.1.1",
+    "mongoose": "~3.8.8"
+  }
+}
