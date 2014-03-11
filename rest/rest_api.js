@@ -24,7 +24,8 @@ function heroesPost(req, res) {
   var hero = new Hero(req.body);
   hero.save(function(err, savedHero) {
     if (!err) {
-      res.status(201).redirect(savedHero.href);
+      res.setHeader('Location', '/api/heroes/'+savedHero.heroid);
+      res.status(201).send(JSON.stringify(savedHero));
     }
     else {
       res.status(403).send(JSON.stringify({err:err}));
@@ -93,7 +94,7 @@ module.exports = function(authMiddleware) {
   });
 
   app.get('/heroes', heroesGet);
-  app.post('/heroes', authMiddleware, heroesPost);
+  app.post('/heroes', heroesPost);
   app.get('/heroes/:heroid', heroGet);
   app.put('/heroes/:heroid', authMiddleware, heroPut);
   app.delete('/heroes/:heroid', authMiddleware, heroDelete);
