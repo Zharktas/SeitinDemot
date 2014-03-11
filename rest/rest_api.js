@@ -67,7 +67,7 @@ function heroDelete(req, res) {
 function heroPut(req, res) {
   var heroid = req.param('heroid');
   if (heroid!==req.body.heroid) {
-      res.status(400).send(JSON.stringify({err:heroid+" != "+req.body.heroid}));
+      res.status(409).send(JSON.stringify({err:heroid+" != "+req.body.heroid}));
   }
   Hero.findOneAndUpdate({heroid:heroid}, req.body, {upsert:true}, function(err, hero) {
     if (!err) {
@@ -93,7 +93,7 @@ module.exports = function(authMiddleware) {
   });
 
   app.get('/heroes', heroesGet);
-  app.post('/heroes', heroesPost);
+  app.post('/heroes', authMiddleware, heroesPost);
   app.get('/heroes/:heroid', heroGet);
   app.put('/heroes/:heroid', authMiddleware, heroPut);
   app.delete('/heroes/:heroid', authMiddleware, heroDelete);

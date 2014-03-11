@@ -5,11 +5,12 @@ var baseUrl = '/api/heroes';
 
 var trans = function(doc, ret, options) {
   // Ei palauteta mongoosen sisäisiä juttuja JSON-esityksessä.
+  delete ret.id
   delete ret._id;
   delete ret.__v;
 }
 
-var options = {toJSON:{transform: trans}};
+var options = {toJSON:{transform: trans, virtuals: true}};
 
 var HeroSchema = new mongoose.Schema({
   heroid: {type: String, required: true, unique: true},
@@ -17,8 +18,11 @@ var HeroSchema = new mongoose.Schema({
   city: String
 }, options);
 
-HeroSchema.virtual('href').get(function() {
-  return baseUrl+'/'+this.heroid;
+HeroSchema.virtual('links').get(function() {
+  return [
+    { rel: 'self', href: baseUrl+'/'+this.heroid }
+    // linkkejä voisi olla lisääkin...
+  ];
 });
 
 module.exports.Hero = mongoose.model('Hero', HeroSchema);
