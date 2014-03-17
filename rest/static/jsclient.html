@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <script type="application/javascript" src="/static/script.js"></script>
+  </head>
+  <body>
+    <textarea id="get"></textarea><br>
+    <button id="get">GET /heroes</button><p>
+
+    <textarea id="post">{"heroid":"spiderman","name":"Spider Man"}</textarea><br>
+    <button id="post">POST /heroes</button><p>
+
+    <textarea id="putid">id</textarea><br>
+    <textarea id="puttext">{"heroid":"spiderman","name":"Hämis"}</textarea><br>
+    <button id="put">PUT /heroes/:heroid</button><p>
+
+    <textarea id="delete">id</textarea><br>
+    <button id="delete">DELETE /heroes/:heroid</button><p>
+
+    <a href="/static/kirjaudu.html">Kirjaudu sisään</a>
+    <form action="/logout" method="POST">
+      <input type="submit" value="Kirjaudu ulos" />
+    </form>
+
+  </body>
+</html>
