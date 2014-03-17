@@ -1,0 +1,16 @@
+{
+  "name": "intro",
+  "version": "0.0.0",
+  "description": "",
+  "main": "intro.js",
+  "dependencies": {
+    "express": "~3.4.8",
+    "ejs": "~0.8.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}

@@ -11,7 +11,7 @@ var characterSchema = new Schema({
 
 var Character = mongoose.model('Character', characterSchema);
 
-Character.remove({name: 'Hulk'}, function(err, hero){
+Character.remove({name: 'Wolverine'}, function(err, hero){
     if (err) throw err;
     console.log("deleted");
 })

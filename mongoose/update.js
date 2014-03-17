@@ -12,7 +12,7 @@ var characterSchema = new Schema({
 var Character = mongoose.model('Character', characterSchema);
 
 Character.findOne({name: 'Hulk'}, function(err, hero){
-    hero.name = "Magneto";
+    hero.name = "Luentodemo";
     hero.save(function(err){
         if (err) throw err;
     });
